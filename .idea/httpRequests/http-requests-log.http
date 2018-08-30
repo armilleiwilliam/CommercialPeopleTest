@@ -1,0 +1,120 @@
+POST http://localhost:8000/login_check?_username=CommPeople&_password=Comtest2018
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-29T094032.200.json
+
+###
+
+POST http://localhost:8000/login_check?_username=CommPeople&_password=Comtest201899
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-29T094017.401.json
+
+###
+
+POST http://localhost:8000/login_check?_username=CommPeople&_password=Comtest2018
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-29T093958.200.json
+
+###
+
+POST http://localhost:8000/login_check?_username=johndoe&_password=test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-29T093932.200.json
+
+###
+
+POST http://localhost:8000/login_check?_username=johndoe&_password=test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T033735.200.json
+
+###
+
+POST http://localhost:8000/login_check?_username=johndoe&_password="test"
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T033716.401.json
+
+###
+
+POST http://localhost:8000/login_check?username="johndoe"&username="test"
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T033624.400.html
+
+###
+
+POST http://localhost:8000/login_check?username=johndoe&username=test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T033545.400.html
+
+###
+
+POST http://localhost:8000/login_check?username=johndoe&username=test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T033154.404.html
+
+###
+
+POST http://localhost:8000/login_check?username=johndoe&username=test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T033133.404.html
+
+###
+
+POST http://localhost:8000/login_check?username=johndoe&username=test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T033108.404.html
+
+###
+
+POST http://localhost:8000/login_check?username=johndoe&username=test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T033106.404.html
+
+###
+
+POST http://localhost:8000/login_check?username=johndoe&username=test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T032937.404.html
+
+###
+
+POST http://localhost:8000/login_check?username=johndoe&username=test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T032928.404.html
+
+###
+
+POST http://localhost:8000/login_check?username=johndoe&username=test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-28T032827.404.html
+
+###
+
