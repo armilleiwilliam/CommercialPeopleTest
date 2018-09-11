@@ -4,27 +4,30 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use App\Services\JWTcreator;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class AuthController extends AbstractController
 {
-    public function register(Request $request, UserPasswordEncoderInterface $encoder)
+    /**
+     * @Route("/login/login_check", name="league_list_check_ver", methods="GET|POST")
+     */
+    public function loginCheck(Request $request, UserPasswordEncoderInterface $encoder, JWTcreator $jwtCreator): JsonResponse
     {
         $em = $this->getDoctrine()->getManager();
 
-        $username = $request->request->get('_username');
-        $password = $request->request->get('_password');
+        $username = $request->query->get('_username');
+        $password = $request->query->get('_password');
+        $user = $em->getRepository(User::class)->findOneByUsername($username);
 
-        $user = new User($username);
-        $user->setPassword($encoder->encodePassword($user, $password));
-        $em->persist($user);
-        $em->flush();
-        return new Response(sprintf('User %s successfully created', $user->getUsername()));
-    }
-    public function api()
-    {
-        return new Response(sprintf('Logged in as %s', $this->getUser()->getUsername()));
+        if ($user) {
+            if ($encoder->isPasswordValid($user, $password)) {
+                return new JsonResponse(["Token" => $jwtCreator->encodeJWT($username)]);
+            }
+        }
+        return new JsonResponse(["Token" => "The credentials are not correct or missing"]);
     }
 }

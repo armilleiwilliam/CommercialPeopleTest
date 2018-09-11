@@ -33,6 +33,11 @@ class User implements UserInterface
         $this->isActive = true;
         $this->username = $username;
     }
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function getUsername()
     {
         return $this->username;

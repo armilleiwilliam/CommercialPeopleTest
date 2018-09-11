@@ -82,7 +82,7 @@ class ApiTeamController extends Controller
         $response = array("response" => "Team not added, check you have put the right data please. 
                         Team and League value can not be empty!");
 
-        // Check if league and team names are set
+        // Check if league and team names are given
         if ($league !== "" && $name !== "" && $league != null && $name != null) {
             $em = $this->getDoctrine()->getManager();
             $leagueExistingCheck = $this->getDoctrine()->getRepository(League::class)->findOneByTitle($league);
