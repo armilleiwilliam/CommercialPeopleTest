@@ -17,19 +17,18 @@ class ExpressionLanguageController extends Controller
      */
     public function expressionLanguage(): JsonResponse
     {
-
         $expressionLanguage = new ExpressionLanguage();
 
         // list of random expressions
-        $expLangOneResult = $expressionLanguage->evaluate('1 == 1'); // displays 3
+        $expLangOneResult = $expressionLanguage->evaluate('1 == 1');
 
-        $expLangTwoResult = $expressionLanguage->evaluate('18 + 12'); // displays 3
+        $expLangTwoResult = $expressionLanguage->evaluate('18 + 12');
 
-        $expLangThreeResult = $expressionLanguage->evaluate('test == 1', array('test' => 1)); // displays 3
+        $expLangThreeResult = $expressionLanguage->evaluate('test == 1', array('test' => 1));
 
-        $expLangFourResult = $expressionLanguage->evaluate('test * test1', array('test' => 4, 'test1' => 7)); // displays 3
+        $expLangFourResult = $expressionLanguage->evaluate('test * test1', array('test' => 4, 'test1' => 7));
 
-        $expLangFiveResult = $expressionLanguage->evaluate('test1 == 2', array('test1' => 5)); // displays 3
+        $expLangFiveResult = $expressionLanguage->evaluate('test1 == 2', array('test1' => 5));
 
         return new JsonResponse(
             array(
